@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+
+int arr[5]={5,4,9,7,2};
+int n=5;
+
+void bubblesort(){
+  for(int i=0; i<n;i++){
+    for(int j=0; j<n-i-1; j++){
+      if(arr[j]>arr[j+1]){
+        int temp;
+        temp=arr[j];
+        arr[j]=arr[j+1];
+        arr[j+1]=temp;
+      }
+    }
+  }
+}
+
+void print(){
+  for(int i=0; i<n;i++){
+    cout<<arr[i]<<endl;
+    
+  }
+}
+int  main(){
+
+cout<<"before bubble sort : "<<endl;
+  print();
+
+  
+
+  bubblesort();
+  cout<<"after bubble sort: "<<endl;
+  print();
+
+
+
+
+  return 0;
+}
