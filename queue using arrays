@@ -1,0 +1,111 @@
+#include<iostream>
+using namespace std;
+
+int que[5] , front = -1, rear = -1, n=5 , item , y;
+
+void Insert(){
+  if (rear==n-1){
+    cout<<"Queue is full - Overflow condition"<<endl;
+    
+  }
+  else {
+    if(front == -1){
+      front = 0;
+    }
+    {
+              cout<<"Enter the element to be inserted in the queue: ";
+              cin>>item;
+              
+              rear++;
+       que[rear]=item;
+             
+      }
+  }
+  
+  }
+
+void Delete(){
+  if(front == -1 || front > rear){
+    cout<<"Queue is empty - underflow condition"<<endl;
+    
+  }
+  else{
+       cout<<"The deleted element is : "<<que[front]<<endl;
+       if(front==rear){
+         front = -1;
+         rear = -1;
+       }
+    else{
+      front ++;
+    }
+  }
+}
+
+void Display(){
+  if(front == -1){
+    cout<<"Queue is empty"<<endl;
+    
+  }
+  else{
+    for(int i=front; i<rear+1; i++){
+      cout<<que[i]<<" ";
+    }
+    cout<<endl;
+  }
+}
+
+int Peek(){
+  if(front==-1){
+    return 0;
+  }
+  else{
+    return que[front];
+  }
+}
+
+
+int main(){
+
+int ch;
+
+  cout<<"1. Insertion "<<endl;
+  cout<<"2. Deletion "<<endl;
+  cout<<"3. Display "<<endl;
+  cout<<"4. Peek "<<endl;
+
+  do{
+    cout<<"Enter your choice: ";
+    cin>>ch;
+    switch(ch) {
+            case 1 :
+                  Insert();
+                  break;
+            case 2 :
+                  Delete();
+                  break;          
+            case 3 :
+                  Display();
+                  break; 
+            case 4 : 
+              Peek();
+              y= Peek();
+              if(y==0){
+                cout<<"Queue is empty"<<endl;
+              }
+              else{
+                cout<<"The first element is : "<<y<<endl;
+              }
+              break;
+    } 
+  }while(ch!=4);
+   
+
+  
+
+
+
+
+
+
+  return 0;
+}
